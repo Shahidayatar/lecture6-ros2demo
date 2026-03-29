@@ -1,3 +1,41 @@
+# Answers :
+Name : Shahid Dayatar
+Student ID / Matriculation Nr :23104920 
+mail : mohd.dayatar@students.unibe.ch
+
+I implemented the demo / readme first and then completed the exercise, some parts of the exercise were tricky and I did not understand well :( 
+## Project Structure
+
+<img width="1322" height="902" alt="image" src="https://github.com/user-attachments/assets/263587fc-11bf-4d83-8692-6212adcc494f" />
+
+robot going in circle 
+<img width="1620" height="1013" alt="image" src="https://github.com/user-attachments/assets/3804acd7-e21d-44df-b48a-1a620b4f2d40" />
+
+**create_timer() allows the publisher to send velocity commands at a fixed, predictable frequency (10 Hz) without blocking the ROS 2 event loop. This ensures the robot receives consistent motion commands while remaining responsive to other callbacks and subscribers.**
+----------------------------------------------------------
+<img width="1863" height="931" alt="image" src="https://github.com/user-attachments/assets/3a75e348-a938-4634-a956-3a99e49eaa73" />
+Pub-Sub Decoupling:
+
+<img width="1267" height="524" alt="image" src="https://github.com/user-attachments/assets/9e98320e-0dc6-44bf-a853-64efa76e0a94" />
+
+
+
+**The publisher-subscriber pattern decouples nodes by allowing them to communicate through a topic without direct knowledge of each other. The publisher (circle_motion) sends velocity commands to /cmd_vel without knowing if any subscriber is listening. its similar to Kafka** 
+
+<img width="952" height="764" alt="image" src="https://github.com/user-attachments/assets/466eb315-c13e-4cf3-a6d8-1b5bb5e750d3" />
+
+1. The /odom topic publishes at approximately 24.8 Hz (about every 40ms). Frequency matters for robot control because higher update rates provide more precise position
+2. /cmd_vel has 1 publisher and 1 subscribe
+3. ros2 topic hz shows the message frequency (how many messages/second), while ros2 topic bw shows the bandwidth (bytes transmitted per second). Frequency tells you how fast updates arrive; bandwidth tells you data throughput.
+
+----------------------------------------------------------------------------
+<img width="1817" height="1033" alt="image" src="https://github.com/user-attachments/assets/42f30ea3-59a7-4f74-98c4-42bfa346e4d6" />
+
+**rqt_graph visualizes ROS2 communication as a directed graph of nodes and topic 
+If circle_motion is stopped, no new velocity commands are published on /cmd_vel, so the robot stops receiving motion updates and will stop**
+
+
+
 # Lecture 6: ROS 2 Concepts & Building Software Packages
 
 
